@@ -1,0 +1,30 @@
+import { OnInit, ElementRef } from '@angular/core';
+import { BaseLineModel } from '../models/baseLine.model';
+import { DataSetModel } from '../models/dataset.model';
+export declare class TrendGraphComponent implements OnInit {
+    tgraph: ElementRef;
+    data: Array<DataSetModel>;
+    baseline: BaseLineModel;
+    canvas: any;
+    ctx: any;
+    vertical_height_margin: number;
+    max_unit: number;
+    max_abs_value: number;
+    max_value: number;
+    min_value: number;
+    data_margin: number;
+    validateStatus: boolean;
+    gradient: any;
+    constructor();
+    ngOnInit(): void;
+    validateGraphInput(data: Array<DataSetModel>): void;
+    refreshData(data: Array<DataSetModel>): void;
+    setDataMargin(datasets: Array<DataSetModel>): void;
+    drawGraph(data: any): void;
+    plotChart(s: any, en: any, baseColor: any, belowColor: any, borderWidth: any): void;
+    plotCircle(point: any, color: any): void;
+    getMax(v: any): void;
+    calcHeight(v: any): number;
+    drawBaseline(baseLine: BaseLineModel): void;
+    drawHorizontalLine(yValue: any, color: any, lineWidth: any): void;
+}
