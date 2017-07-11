@@ -1,8 +1,8 @@
 {
   "name": "angular-trend-graph",
-  "version": "1.0.0",
-  "description": "A lightweight Angular 4 trend graph with baseline feature.",
-  "main": "bundles/trend-module.umd.js",
+  "version": "1.0.5",
+  "description": "Light weight trend graph for Angular 4",
+  "main": "bundles/trend-graph.umd.js",
   "module": "index.js",
   "typings": "index.d.ts",
   "keywords": [
@@ -10,17 +10,17 @@
     "angular2",
     "angular 2",
     "angular4",
-    "trend-graph"
+    "Trend Graph"
   ],
   "author": "Abhishek Khuntia",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/youraccount/angular-amazing.git"
+    "url": "https://github.com/abhishekkhuntia/trend-graph.git"
   },
-  "homepage": "https://github.com/youraccount/angular-amazing",
+  "homepage": "https://github.com/abhishekkhuntia/trend-graph/",
   "bugs": {
-    "url": "https://github.com/youraccount/angular-amazing/issues"
+    "url": "https://github.com/abhishekkhuntia/trend-graph/issues/"
   },
   "peerDependencies": {
     "@angular/core": "^2.4.0 || ^4.0.0",

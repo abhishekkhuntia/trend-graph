@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var DataSetModel = (function () {
     function DataSetModel(input) {
         this.data = input.data ? input.data : [];
@@ -8,5 +6,5 @@ var DataSetModel = (function () {
     }
     return DataSetModel;
 }());
-exports.DataSetModel = DataSetModel;
+export { DataSetModel };
 //# sourceMappingURL=dataset.model.js.map

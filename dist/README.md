@@ -9,7 +9,7 @@ Light weight Angular 4 Trend graph, this aims at making the graphs with less bro
 
 'import TrendModuleModule' in the `app.module.ts` file.
 Use the following in the page:
-`<t-graph [data]="<graph_data>" [baseline]="<graph_Base_Value>" ></t-graph>`
+`<trend-graph [data]="<graph_data>" [baseline]="<graph_Base_Value>" ></trend-graph>`
 
 ###DATA
 The `data` is to be array of datasets in the following format:

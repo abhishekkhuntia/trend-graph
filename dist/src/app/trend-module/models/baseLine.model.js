@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var BaseLineModel = (function () {
     function BaseLineModel(input) {
         console.log('BASELINE CONSTRUCTOR >>', input);
@@ -10,5 +8,5 @@ var BaseLineModel = (function () {
     }
     return BaseLineModel;
 }());
-exports.BaseLineModel = BaseLineModel;
+export { BaseLineModel };
 //# sourceMappingURL=baseLine.model.js.map

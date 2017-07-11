@@ -1,7 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var baseLine_model_1 = require("../models/baseLine.model");
+import { Component, ViewChild, Input } from '@angular/core';
+import { BaseLineModel } from '../models/baseLine.model';
 var TrendGraphComponent = (function () {
     function TrendGraphComponent() {
     }
@@ -10,7 +8,7 @@ var TrendGraphComponent = (function () {
         this.canvas = this.tgraph.nativeElement;
         this.ctx = this.canvas.getContext('2d');
         this.max_unit = this.max_abs_value = this.max_value = this.vertical_height_margin = this.data_margin = this.min_value = 0;
-        this.baseline = this.baseline != undefined ? new baseLine_model_1.BaseLineModel(this.baseline) : null;
+        this.baseline = this.baseline != undefined ? new BaseLineModel(this.baseline) : null;
         this.data != undefined ? this.validateGraphInput(this.data) : console.error('GRAPH DATA IS >> UNDEFINED');
         this.gradient = '#484848';
     };
@@ -40,7 +38,10 @@ var TrendGraphComponent = (function () {
         var _this = this;
         console.log(">> DRAW GRAPH >>");
         //-------SETTING GRAPH PARAMS-----------
-        this.vertical_height_margin = (this.ctx.canvas.height - 20) / (this.max_abs_value);
+        if (this.max_abs_value > 0)
+            this.vertical_height_margin = (this.ctx.canvas.height - 20) / (this.max_abs_value);
+        else
+            this.vertical_height_margin = (this.ctx.canvas.height - 20);
         //--------------------------------------
         var l = 0;
         var t = 0;
@@ -152,12 +153,16 @@ var TrendGraphComponent = (function () {
         // console.log('MAX ABS VALUE >', this.max_abs_value,' > MAX DATA VALUE > ', this.max_value, ' > MIN DATA VALUE >',this.min_value);
     };
     TrendGraphComponent.prototype.calcHeight = function (v) {
-        if (this.max_value <= 0 && this.min_value >= 0) {
-            var relattr = this.max_value <= 0 ? this.max_value : this.min_value;
-            return this.vertical_height_margin * (relattr - v + 5);
+        if (this.max_abs_value > 0) {
+            if (this.max_value <= 0 && this.min_value >= 0) {
+                var relattr = this.max_value <= 0 ? this.max_value : this.min_value;
+                return Math.floor(this.vertical_height_margin * (relattr - v + 5));
+            }
+            else
+                return Math.floor(this.vertical_height_margin * (this.max_value - v + 5));
         }
         else
-            return this.vertical_height_margin * (this.max_value - v + 5);
+            return Math.floor(this.vertical_height_margin);
     };
     TrendGraphComponent.prototype.drawBaseline = function (baseLine) {
         // console.log('DRAW-BASELINE >>', baseLine);
@@ -174,19 +179,19 @@ var TrendGraphComponent = (function () {
     };
     return TrendGraphComponent;
 }());
+export { TrendGraphComponent };
 TrendGraphComponent.decorators = [
-    { type: core_1.Component, args: [{
+    { type: Component, args: [{
                 selector: 'trend-graph',
-                templateUrl: './trend-graph.component.html',
-                styleUrls: ['./trend-graph.component.css']
+                template: '<canvas #tgraph class="gclass"></canvas>',
+                styles: ["\n    .gclass{}\n  "],
             },] },
 ];
 /** @nocollapse */
 TrendGraphComponent.ctorParameters = function () { return []; };
 TrendGraphComponent.propDecorators = {
-    'tgraph': [{ type: core_1.ViewChild, args: ['tgraph',] },],
-    'data': [{ type: core_1.Input },],
-    'baseline': [{ type: core_1.Input },],
+    'tgraph': [{ type: ViewChild, args: ['tgraph',] },],
+    'data': [{ type: Input },],
+    'baseline': [{ type: Input },],
 };
-exports.TrendGraphComponent = TrendGraphComponent;
 //# sourceMappingURL=trend-graph.component.js.map
