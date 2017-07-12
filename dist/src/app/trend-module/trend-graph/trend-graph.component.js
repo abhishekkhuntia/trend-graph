@@ -3,10 +3,16 @@ import { BaseLineModel } from '../models/baseLine.model';
 var TrendGraphComponent = (function () {
     function TrendGraphComponent() {
     }
-    TrendGraphComponent.prototype.ngOnInit = function () {
+    TrendGraphComponent.prototype.ngOnChanges = function (changes) {
+        this.data = changes.data != undefined ? changes.data.currentValue : this.data;
+        this.baseline = changes.baseline != undefined ? changes.baseline.currentValue : this.baseline;
+        this.initializing();
+    };
+    TrendGraphComponent.prototype.initializing = function () {
         this.validateStatus = false;
         this.canvas = this.tgraph.nativeElement;
         this.ctx = this.canvas.getContext('2d');
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         this.max_unit = this.max_abs_value = this.max_value = this.vertical_height_margin = this.data_margin = this.min_value = 0;
         this.baseline = this.baseline != undefined ? new BaseLineModel(this.baseline) : null;
         this.data != undefined ? this.validateGraphInput(this.data) : console.error('GRAPH DATA IS >> UNDEFINED');

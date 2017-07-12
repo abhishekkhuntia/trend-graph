@@ -1,7 +1,7 @@
-import { OnInit, ElementRef } from '@angular/core';
+import { OnChanges, ElementRef } from '@angular/core';
 import { BaseLineModel } from '../models/baseLine.model';
 import { DataSetModel } from '../models/dataset.model';
-export declare class TrendGraphComponent implements OnInit {
+export declare class TrendGraphComponent implements OnChanges {
     tgraph: ElementRef;
     data: Array<DataSetModel>;
     baseline: BaseLineModel;
@@ -16,7 +16,8 @@ export declare class TrendGraphComponent implements OnInit {
     validateStatus: boolean;
     gradient: any;
     constructor();
-    ngOnInit(): void;
+    ngOnChanges(changes: any): void;
+    initializing(): void;
     validateGraphInput(data: Array<DataSetModel>): void;
     refreshData(data: Array<DataSetModel>): void;
     setDataMargin(datasets: Array<DataSetModel>): void;
