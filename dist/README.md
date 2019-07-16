@@ -10,7 +10,7 @@ Light weight Angular 4 Trend graph, this aims at making the graphs with less bro
 
 ##Usage
 
-'import TrendModuleModule' in the `app.module.ts` file.
+'import TrendGraphModule' in the `app.module.ts` file.
 Use the following in the page:
 `<trend-graph [data]="<graph_data>" [baseline]="<graph_Base_Value>" ></trend-graph>`
 
@@ -31,7 +31,7 @@ As mentioned, `data` is an array, we can have multiple line graphs in the same g
 >Note: As of now the graph is not binded with the change events in data.
 
 ###BASELINE
-If `baseline` is defined then, the graph makes a horizontal line and makes the strokes below the line of desired color. 
+If `baseline` is defined then, the graph makes a horizontal line and makes the strokes below the line of desired color.
 the baseline is to be an object in the below format:
 
 ```
@@ -49,6 +49,3 @@ the baseline is to be an object in the below format:
 > Note: Baseline is optional. If no change in color below the baseline is required then specify the `belowBaseLineColor` same as of the graph's color.
 
 The default value of `belowBaseLineColor` is `red`.
-
-
-
