@@ -1,6 +1,6 @@
 {
   "name": "angular-trend-graph",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Light weight trend graph for Angular 4 with dynamic change detections.",
   "main": "bundles/trend-graph.umd.js",
   "module": "index.js",
