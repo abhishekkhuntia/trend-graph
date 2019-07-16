@@ -1,6 +1,6 @@
 {
   "name": "angular-trend-graph",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Light weight trend graph for Angular 4 with dynamic change detections.",
   "main": "bundles/trend-graph.umd.js",
   "module": "index.js",
@@ -10,6 +10,7 @@
     "angular2",
     "angular 2",
     "angular4",
+    "angular6",
     "Trend Graph"
   ],
   "author": "Abhishek Khuntia",
