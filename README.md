@@ -10,7 +10,7 @@ Light weight Angular 4 Trend graph, this aims at making the graphs with less bro
 
 ##Usage
 
-'import TrendModuleModule' in the `app.module.ts` file.
+'import TrendGraphModule' in the `app.module.ts` file.
 Use the following in the page:
 `<trend-graph [data]="<graph_data>" [baseline]="<graph_Base_Value>" ></trend-graph>`
 
