@@ -1,6 +1,6 @@
-#ANGULAR 4 - TREND GRAPH
+#ANGULAR 4+ - TREND GRAPH
 
-version:1.0.6:
+version:1.0.7:
 It exploits the feature of change detections of Angular 4, so that the graphs are redrawn.
 
 Light weight Angular 4 Trend graph, this aims at making the graphs with less browser rendering and painting.
